@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int binario_octal;
+    int binario_hexadecimal;
+    int binario_decimal;
+	int fst, num, sec;
+	char binario[32];
+    printf("-----------------------------------------\n");
+	printf("------Conversor de Bases Numericas-------\n");
+    printf("-----------------------------------------\n");
+	printf("-------Selecione a base requerida--------\n");
+	printf("-----------------------------------------\n");
+	printf("->(1) Binaria.\n");
+	printf("->(2) Octal.\n");
+	printf("->(3) Decimal.\n");
+	printf("->(4) Hexadecimal.\n");
+	printf("Coloque sua escolha:\n ");
+	scanf("%i", &fst);
+	   switch(fst){
+             case (1):
+        printf("Digite o valor do binario: ");
+		scanf("%s", binario);
+        printf("------ Agora, escolha a segunda base para a conversão:\n");
+		printf("------1 Octal.\n");
+		printf("------2 Decimal.\n");
+		printf("------3 Hexadecimal.\n");
+		printf("Coloque sua escolha\n ");
+		scanf("%i", &sec);
+         switch(sec){
+               case (1):
+                 binario_octal = strtol(binario, NULL, 2);
+			     printf("A conversão para octal resulta em: %o\n", binario_octal);
+			         break;
+               case (2):
+                    binario_decimal = strtol(binario, NULL, 2);
+                    printf("A conversão para decimal resulta em: %i\n", binario_decimal);
+                    break;
+               case (3):
+                    binario_hexadecimal = strtol(binario, NULL, 2);
+					printf("A conversão para hexadecimal resulta em: %X\n", binario_hexadecimal);
+                    break;
+               default:
+                   printf("opção inválida\n");
+                   break;
+} 
+       case (2):
+        printf("Digite o valor do octal: ");
+		scanf("%o", &num);
+		
+	    printf("------ Agora, escolha a segunda base para a conversão:\n");
+		printf("------1 Binaria.\n");
+		printf("------2 Decimal.\n");
+		printf("------3 Hexadecimal.\n");
+		printf("Escolha: ");
+		scanf("%i", &sec);
+		switch(sec){
+                      case (1):
+                       ltoa(num, binario, 2);
+                       printf("A conversão para binário resulta em: %s\n", binario);
+                       break;
+                      case (2):
+                           printf("A conversão para decimal resulta em: %i\n", num);
+                           break;
+                      case (3):
+                            printf("A conversão para hexadecimal resulta em: %X\n", num);
+                            break;
+                      default:
+                          printf("opção inválida\n");
+                          break;    
+}
+        case (3):
+        printf("Digite o valor do decimal: ");
+		scanf("%i", &num);
+		
+	    printf("------ Agora, escolha a segunda base para a conversão:\n");
+		printf("(1) Binaria.\n");
+		printf("(2) Octal.\n");
+		printf("(3) Hexadecimal.\n\n");
+		printf("Escolha: ");
+		scanf("%i", &sec);
+        switch(sec){
+                      case (1):
+                          ltoa(num, binario, 2);
+  	                      printf("A conversão para binário resulta em: %s\n", binario); 
+                          break;
+                      case (2):
+                          printf("A conversão para octal resulta em: %o\n", num);  
+                          break;          
+                      case (3):
+                           printf("A conversão para hexadecimal resulta em: %X\n", num);
+                      default:
+                           printf("opção inválida\n");
+}
+      case (4):
+        printf("Digite o valor hexadecimal: ");
+		scanf("%X", &num);
+		
+		printf("------ Agora, escolha a segunda base para a conversão:\n");
+		printf("(1) Binaria.\n");
+		printf("(2) Octal.\n");
+		printf("(3) Decimal.\n\n");
+		printf("Escolha: ");
+		scanf("%i", &sec);
+        switch(sec){
+                      case (1):
+                           ltoa(num, binario, 2);
+                           printf("A conversão para binário resulta em: %s\n", binario);
+                           break;
+                      case (2):
+                           printf("A conversão para octal resulta em: %o\n", num);
+                           break;
+                      case (3):
+                           printf("A conversão para decimal resulta em: %i\n", num);
+                           break;
+                      default:
+                           printf("opção inválida\n");
+                           break;
+}
+        default:
+                printf("opção inválida\n");
+                break;
+}
+system("pause");
+return 0;
+}
